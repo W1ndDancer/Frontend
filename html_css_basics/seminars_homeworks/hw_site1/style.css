@@ -1,0 +1,36 @@
+a {
+    text-decoration: none;
+}
+
+.links {
+    color: cornflowerblue;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.h1_header {
+    color: #222;
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: bold;
+}
+
+.h2_header {
+    color: coral;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 80px;
+}
+
+.paragraph {
+    font-style: normal;
+    font-weight: 300px;
+    font-size: 18px;
+    line-height: 30px;
+    color: #7d7987;
+}
+
+.images {
+    border-radius: 5px; 
+}
