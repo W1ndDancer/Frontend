@@ -207,6 +207,22 @@ img {
 
 .product {
     background: #F7F7F7;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product__img {
+    width: 600px;
+}
+
+.product__description {
+    border: 1px solid #EAEAEA;
+    margin-top: -30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
