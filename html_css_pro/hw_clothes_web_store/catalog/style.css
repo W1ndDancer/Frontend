@@ -184,16 +184,12 @@ img {
   color: #F16D7F;
 }
 
-.product {
+.product__img {
   background: #F7F7F7;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-}
-
-.product__img {
-  width: 600px;
 }
 
 .product__description {
