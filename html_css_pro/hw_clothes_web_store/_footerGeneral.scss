@@ -1,0 +1,100 @@
+.footer {
+
+    &__rev-sub {
+        min-height: 448px;
+        background-position: left bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: rgba(244, 244, 244);
+        @include positioning (center, space-between);
+
+        &__review {
+            max-width: 360px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        &__photo {
+            width: 96px;
+        }
+
+        &__text {
+            @include font($fontStyle, $fontWeight, 20px, 24px, #222224);
+            text-align: center;
+        }
+
+        &__title {
+            @include font($fontStyle, 700, 24px, 153.2%, #222224);
+            text-align: center;
+        }
+
+        &__subtitle {
+            @include font($fontStyle, $fontWeight, 18px, 153.2%, #222224);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        &__subscribe {
+            @include positioning (center, space-between);
+            max-width: 360px;
+            flex-direction: column;
+        }
+
+        &__form {
+            max-width: 356px;
+            height: 50px;
+            @include positioning (stretch, center);
+
+            &__email {
+                @include font($fontStyle, $fontWeight, $fontSize, $lineHeight, #222224);
+                @include positioning (center, center);
+                opacity: 0.67;
+                background: #E1E1E1;
+                width: 256px;
+                max-height: 50px;
+                border: 0;
+                border-top-left-radius: 25px;
+                border-bottom-left-radius: 25px;
+                padding-left: 22px;
+                padding-right: 22px;
+            }
+
+            &__button {
+                @include font($fontStyle, $fontWeight, $fontSize, $lineHeight, #fff);
+                text-align: center;
+                background: $accentColor;
+                width: 100px;
+                max-height: 50px;
+                border: 0;
+                border-top-right-radius: 25px;
+                border-bottom-right-radius: 25px;
+                @include positioning (center, center);
+            }
+        }
+    }
+
+    &__social-media {
+        @include positioning (center, space-between);
+        background: #222224;
+        min-height: 79px;
+
+        &__title {
+            @include font($fontStyle, $fontWeight, 16px, 19px, #fbfbfb);
+        }
+
+        &_icons-box {
+            display: flex;
+            gap: 7px;
+        }
+
+        &__icon:hover .path-outer {
+            fill: $accentColor;
+        }
+
+        &__icon:hover .path-inner {
+            fill: #FFF;
+        }
+    }
+}

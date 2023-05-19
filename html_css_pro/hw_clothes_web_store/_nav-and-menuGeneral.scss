@@ -1,0 +1,78 @@
+.top {
+
+    &__nav-panel {
+        min-height: 75px;
+        @include positioning (center, space-between);
+        flex-direction: row;
+        flex-wrap: wrap;
+        background: #000;
+
+        &__left-side {
+            @include positioning (center, center);
+            gap: 41px;
+        }
+
+        &__right-side {
+            @include positioning (center, center);
+            gap: 33px;
+        }
+    }
+}
+
+.menu {
+    position: absolute;
+    top: 75px;
+    z-index: 1;
+    right: -232px;
+    width: 232px;
+    background: #FFFFFF;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    padding: 32px;
+    box-sizing: border-box;
+
+    &__ticker {
+        display: none;
+
+        &:checked~.menu {
+            right: 0px;
+            transition: 0.4s;
+        }
+    }
+
+    &__button {
+        cursor: pointer;
+    }
+
+    &__title {
+        margin-bottom: 24px;
+        @include font($fontStyle, 700, 14px, 17px, #000);
+    }
+
+    &__subtitle {
+        margin-bottom: 12px;
+        @include font($fontStyle, 400, 14px, 17px, $accentColor);
+    }
+
+    &__list {
+        list-style-type: none;
+        padding-left: 21px;
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+    }
+
+    &__link {
+
+        @include font($fontStyle, $fontWeight, $fontSize, $lineHeight, $contentColor);
+
+        &:hover {
+            color: $accentColor;
+        }
+
+        &__box {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+}

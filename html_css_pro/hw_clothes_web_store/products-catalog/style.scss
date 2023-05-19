@@ -1,6 +1,6 @@
-@import 'vars-and-mixins';
-@import 'nav-and-menuGeneral';
-@import 'footerGeneral';
+@import '../vars-and-mixins';
+@import '../nav-and-menuGeneral';
+@import '../footerGeneral';
 
 /* DESKTOP */
 
@@ -261,7 +261,7 @@ img {
     }
 
     &__rev-sub {
-        background-image: url(img/footer/photo_subscribe.jpg);
+        background-image: url(../img/footer/photo_subscribe.jpg);
     }
 }
 
@@ -376,12 +376,12 @@ img {
         &__item {
             max-width: 343px;
         }
-    
+
         &__title {
             font-size: 24px;
             line-height: 29px;
         }
-    
+
         &__subtitle {
             font-size: 16px;
             line-height: 19px;
@@ -411,19 +411,19 @@ img {
         &__item {
             max-width: 343px;
         }
-    
+
         &__rev-sub {
             padding-bottom: 110px;
 
             &__review {
                 max-width: 343px;
             }
-        
+
             &__text {
                 font-size: 18px;
                 line-height: 22px;
             }
-        
+
             &__subscribe {
                 max-width: 343px;
 
