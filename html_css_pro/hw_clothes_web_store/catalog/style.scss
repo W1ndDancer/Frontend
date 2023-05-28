@@ -1,6 +1,6 @@
 @import '../vars-and-mixins';
-@import '../nav-and-menu';
-@import '../footer';
+@import '../nav-and-menuGeneral';
+@import '../footerGeneral';
 
 
 /* DESKTOP */
@@ -20,6 +20,15 @@ a {
 
 img {
     max-width: 100%;
+}
+
+summary {
+    display: block;
+    cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+    display: none;
 }
 
 .center {
@@ -75,7 +84,7 @@ img {
         background-color: #F8F8F8;
         height: 777px;
         border-bottom: #EAEAEA 1px solid;
-        
+
         & :hover path {
             fill: $accentColor;
         }
@@ -148,53 +157,70 @@ img {
     }
 
     &__choices {
+        cursor: pointer;
+        margin-bottom: 49px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 42px;
-        margin-bottom: 49px;
-        cursor: pointer;
-
         align-content: center;
+        gap: 42px;
 
-        & summary {
+        &__item[open] .products-catalog__choices__summary {
+            color: $accentColor;
+        }
+
+        &__item[open] path {
+            fill: $accentColor;
+        }
+
+
+        &__summary {
             @include positioning (center, space-between);
             gap: 9px;
             @include font($fontStyle, $fontWeight, $fontSize, $lineHeight, $contentColor);
+
+            &:hover {
+                color: $accentColor;
+            }
+
+            &:hover path {
+                fill: $accentColor;
+            }
         }
     }
 
     &__add-to-cart-text {
-        @include font($fontStyle, $fontWeight, $fontSize, $lineHeight, #FFF);
 
+        @include font($fontStyle, $fontWeight, $fontSize, $lineHeight, #FFF);
+    
         &_big {
             @include font($fontStyle, $fontStyle, 16px, 19px, $accentColor);
         }
     }
-
+    
     &__box {
         margin-top: -767px;
         padding-bottom: 48px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
-
+    
         &__item {
             position: relative;
             background-color: #F8F8F8;
-
+    
             &_big {
                 display: grid;
                 grid-column: span 3;
                 justify-items: center;
             }
-
+    
             &__content {
                 display: flex;
                 flex-direction: column;
                 gap: 18px;
                 padding: 24px 18px;
-
+    
                 &_big {
                     background-color: #FFF;
                     border: solid 1px #EAEAEA;
@@ -205,7 +231,7 @@ img {
                     align-items: center;
                 }
             }
-
+    
             &__add-to-cart {
                 position: absolute;
                 top: 188px;
@@ -214,7 +240,7 @@ img {
                 border: 1px solid #FFF;
                 padding: 11px 13px 9px;
                 cursor: pointer;
-
+    
                 &_big {
                     display: flex;
                     align-items: center;
@@ -224,41 +250,44 @@ img {
                     height: 47px;
                     border: solid 1px $accentColor;
                     cursor: pointer;
-
+    
                     &:hover {
                         background-color: $accentColor;
                     }
-
+    
                     &:hover path {
                         fill: #FFF;
                     }
-
+    
                     &:hover .products-catalog__add-to-cart-text_big {
                         color: #FFF;
                     }
                 }
-
+    
                 &:hover path {
                     fill: $accentColor;
                 }
-
+    
                 &:hover .products-catalog__add-to-cart-text {
                     color: $accentColor;
                 }
-
+    
             }
-
+    
             &:hover .products-catalog__img {
                 filter: brightness(0.5);
             }
-
+    
             &:hover &__add-to-cart {
                 @include positioning (center, center);
                 gap: 11px;
             }
         }
+    
     }
 }
+
+
 
 .footer {
     &__rev-sub {

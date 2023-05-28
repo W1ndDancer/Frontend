@@ -18,3 +18,19 @@ $lineHeight: 17px;
     align-items: $alignItems;
     justify-content: $justifyContent;
 }
+
+%sorts-open {
+    &[open] {
+        z-index: 1;
+        background-color: #FFF;
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    }
+
+    &[open] summary {
+        color: $accentColor;
+    }
+
+    &[open] path {
+        fill: $accentColor;
+    }
+}

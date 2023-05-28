@@ -21,6 +21,15 @@ img {
     max-width: 100%;
 }
 
+summary {
+    display: block;
+    cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
 .center {
     padding-left: calc(50% - 570px);
     padding-right: calc(50% - 570px);
@@ -34,40 +43,42 @@ img {
 
 .top {
 
-    &__content {
-        padding-left: calc(50% - 800px);
-        padding-right: calc(50% - 800px);
-        margin-bottom: 65px;
-        @include positioning (center, flex-start);
-        gap: 64px;
-        background: #F1E4E6;
-
-        & img {
-            width: 50%;
-        }
-    }
-
-    &__text {
-        width: 405px;
-        padding-left: 16px;
-        border-left: solid 12px $accentColor;
-    }
-
     &__title {
-        font-weight: 900;
-        font-size: 48px;
-        line-height: 56px;
-        color: #222;
+        @include font($fontStyle, $fontWeight, 24px, 29px, $accentColor);
     }
 
-    &__subtitle {
-        font-weight: 700;
-        font-size: 32px;
-        line-height: 37px;
-        color: #222;
+    &__content-block {
+        @include positioning (center, space-between);
+        flex-direction: row;
+        flex-wrap: wrap;
+        background: #F8F3F4;
+        min-height: 150px;
+    }
 
-        &_colored {
-            color: $accentColor;
+    &__breadcrumb {
+        list-style: none;
+
+        &__li {
+            display: inline;
+
+            &:last-child .top__breadcrumb__a {
+                font-weight: 700;
+                color: $accentColor;
+            }
+        }
+
+        &__a {
+            @include font($fontStyle, 300, $fontSize, $lineHeight, #636363);
+        }
+
+        &__li+&__li:before {
+            padding: 8px;
+            color: $contentColor;
+            content: "/\00a0";
+        }
+
+        &__li &__a:hover {
+            color: $accentColor
         }
     }
 }
@@ -76,47 +87,128 @@ img {
     position: relative;
 }
 
-.offer {
-    margin-bottom: 96px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.sort {
+    padding-top: 39px;
+    position: absolute;
+    display: flex;
     gap: 30px;
+}
 
-    &__item {
-        position: relative;
+.filter {
+    position: relative;
+    width: 360px;
+    padding: 13px 16px;
+    box-sizing: border-box;
+    @extend %sorts-open;
 
-        &_big {
-            grid-column: span 3;
+    &__summary {
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        @include font($fontStyle, 600, $fontSize, $lineHeight, $contentColor);
+
+        &:hover path {
+            fill: $accentColor;
+        }
+
+        &:hover {
+            color: $accentColor;
         }
     }
 
     &__content {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        @include positioning (center, center);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &__item {
+            &[open] .filter__content__heading {
+                color: $accentColor;
+            }
+        }
+
+        &__heading {
+            padding-left: 16px;
+            height: 37px;
+            border-bottom: 1px solid #EBEBEB;
+            border-left: 5px solid $accentColor;
+            display: flex;
+            align-items: center;
+            @include font($fontStyle, $fontWeight, $fontSize, $lineHeight, $contentColor);
+
+            &:hover {
+                color: $accentColor;
+            }
+        }
+
+        &__links-box {
+            padding: 24px 12px 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        &__links {
+            @include font($fontStyle, $fontWeight, $fontSize, $lineHeight, $contentColor);
+
+            &:hover {
+                color: $accentColor
+            }
+        }
+    }
+}
+
+.trending-now {
+    padding: 13px 16px;
+    box-sizing: border-box;
+    position: relative;
+    height: 150px;
+    @extend %sorts-open;
+
+    &__summary {
+        @extend .filter__summary;
+    }
+}
+
+.size {
+    padding: 13px 16px;
+    box-sizing: border-box;
+    position: relative;
+    height: 179px;
+    @extend %sorts-open;
+
+    &__summary {
+        @extend .filter__summary;
     }
 
-    &__subtitle {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
-        text-align: center;
-        color: #FFFFFF;
-    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
 
-    &__title {
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 29px;
-        text-align: center;
-        color: $accentColor;
+        &__checkbox {
+            @include positioning (center, flex-start);
+            @include font($fontStyle, $fontWeight, $fontSize, 16px, $contentColor);
+            gap: 10px;
+        }
+    }
+}
+
+.price {
+    padding: 13px 16px;
+    box-sizing: border-box;
+    position: relative;
+    height: 150px;
+    @extend %sorts-open;
+
+    &__summary {
+        @extend .filter__summary;
     }
 }
 
 .products-catalog {
+    padding-top: 134px;
     padding-bottom: 90px;
     @include positioning (center, center);
     flex-direction: column;
@@ -167,24 +259,7 @@ img {
         color: #F16D7F;
     }
 
-    &__browse-all-button {
-        width: 212px;
-        height: 48px;
-        border: solid 1px #FF6A6A;
-        background: none;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
-        color: #F26376;
-
-        &:hover {
-            background-color: #F16D7F;
-            color: #FFF;
-        }
-    }
-
     &__box {
-        padding-top: 48px;
         padding-bottom: 48px;
         display: grid;
         grid-template: repeat(2, 2fr) / repeat(3, 3fr);
@@ -192,6 +267,8 @@ img {
 
         &__item {
             position: relative;
+            background-color: #F8F8F8;
+            ;
 
             &__content {
                 display: flex;
@@ -226,6 +303,26 @@ img {
                 display: flex;
                 gap: 11px;
             }
+        }
+    }
+}
+
+.pagination {
+    min-height: 43px;
+    width: 283px;
+    border: solid 1px #EBEBEB;
+    @include positioning(center, center);
+    gap: 17px;
+
+    &__page-number {
+        @include font($fontStyle, 300, 16px, 19px, #C4C4C4);
+
+        &:hover {
+            color: $accentColor;
+        }
+
+        &:hover path {
+            fill: $accentColor;
         }
     }
 }

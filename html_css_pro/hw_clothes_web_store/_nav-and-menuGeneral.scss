@@ -30,6 +30,10 @@
     padding: 32px;
     box-sizing: border-box;
 
+    &__item {
+        margin-bottom: 20px;
+    }
+
     &__ticker {
         display: none;
 
@@ -49,13 +53,13 @@
     }
 
     &__subtitle {
-        margin-bottom: 12px;
         @include font($fontStyle, 400, 14px, 17px, $accentColor);
     }
 
     &__list {
-        list-style-type: none;
+        padding-top: 12px;
         padding-left: 21px;
+        list-style-type: none;
         display: flex;
         flex-direction: column;
         gap: 11px;
