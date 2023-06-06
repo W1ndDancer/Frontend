@@ -478,14 +478,12 @@ summary::-webkit-details-marker {
   .main {
     display: flex;
     flex-direction: column;
-  }
-}
-@media (max-width: 351px) {
-  .main {
     margin-left: 8px;
     margin-right: 8px;
     margin-bottom: 100px;
   }
+}
+@media (max-width: 374px) {
   .registration__field {
     width: 304px;
   }
