@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Cart</title>
+    <title>Registration</title>
 </head>
 
 <body>
@@ -62,51 +62,53 @@
                 </div>
             </header>
             <div class="top__title-block center">
-                <h1 class="top__title">SHOPPING&nbsp;CART</h1>
+                <h1 class="top__title">REGISTRATION</h1>
             </div>
         </div>
-        <section class="main">
-            <div class="item center">
-                <figure class="item__cart">
-                    <img class="item__img" src="../img/products/3.svg" alt="item-cart">
-                    <div class="item__content">
-                        <img src="../img/cart/close-element.svg" alt="close-elem" class="item__close-elem">
-                        <a href="#" class="item__title_cart">MANGO  PEOPLE  T-SHIRT</a>
-                        <p class="item__text_l">Price:&nbsp;<span class="item__text_l item__text_price">$300</span></p>
-                        <p class="item__text_l">Color: Red</p>
-                        <p class="item__text_l">Size: Xl	</p>
-                        <p class="item__text_l">Quantity: <input type="number" class="item__text_l item__text_quantity"></input></p>
+        <section class="main center">
+            <div class="registration">
+                <form action="#" class="registration__form">
+                    <h2 class="registration__title">Your Name</h2>
+                    <input type="text" class="registration__field" placeholder="First Name">
+                    <input type="text" class="registration__field" placeholder="Last Name">
+                    <div class="registration__radio-box">
+                        <label class="registration__label">
+                            <input class="registration__radio" type="radio" name="sex">
+                            Male
+                        </label>
+                        <label class="registration__label">
+                            <input class="registration__radio" type="radio" name="sex">
+                            Female
+                        </label>
                     </div>
-                </figure>
-                <form action="#" class="item__shipping-form">
-                    <h2 class="item__title_shipping-form">SHIPPING ADRESS</h2>
-                    <input type="text" class="item__text_s" placeholder="city">
-                    <input type="text" class="item__text_s" placeholder="State">
-                    <input type="text" class="item__text_s" placeholder="Postcode / Zip">
-                    <button type="submit" class="button">GET A QUOTE</button>
+                    <h2 class="registration__title">Login details</h2>
+                    <input type="email" class="registration__field" placeholder="Email">
+                    <input type="password" class="registration__field" placeholder="Password">
                 </form>
-                <figure class="item__cart">
-                    <img class="item__img" src="../img/products/4.svg" alt="item-cart">
-                    <div class="item__content">
-                        <img src="../img/cart/close-element.svg" alt="close-elem" class="item__close-elem">
-                        <a href="#" class="item__title_cart">MANGO  PEOPLE  T-SHIRT</a>
-                        <p class="item__text_l">Price:&nbsp;<span class="item__text_l item__text_price">$300</span></p>
-                        <p class="item__text_l">Color: Red</p>
-                        <p class="item__text_l">Size: Xl	</p>
-                        <p class="item__text_l">Quantity: <span class="item__text_l item__text_quantity">2</span></p>
-                    </div>
-                </figure>
-                <div class="item__checkout">
-                    <h3 class="item__title_subtitle-check">SUB TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$900</h3>
-                    <h2 class="item__title_title-check">GRAND TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="item__title_title-check_colored">$900</span></h2>
-                    <hr class="item__hr-line">
-                    <div class="item__checkout-button">PROCEED TO CHECKOUT</div>
-                </div>
-                <div class="cart-buttons center">
-                    <div class="cart-button">CLEAR SHOPPING CART</div>
-                    <div class="cart-button">CONTINUE SHOPPING</div>
+                <p class="registration__text">Please use 8 or more characters, with at least 1 number and a mixture
+                    of uppercase and lowercase letters</p>
+                <div class="registration__button">
+                    JOIN NOW
+                    <img src="../img/registration/arrow.svg" alt="arrow" class="registration__img_arrow">
                 </div>
             </div>
+            <article class="loyalty-programm">
+                <h2 class="loyalty-programm__text">LOYALTY HAS ITS PERKS</h2>
+                <p class="loyalty-programm__text">
+                    Get in on the loyalty program where you can earn points and unlock serious perks. Starting with
+                    these as soon as you join:
+                </p>
+                <ul class="loyalty-programm__ul">
+                    <li class="loyalty-programm__li">15% off welcome offer
+                    </li>
+                    <li class="loyalty-programm__li">Free shipping, returns and exchanges on all orders
+                    </li>
+                    <li class="loyalty-programm__li">$10 off a purchase on your birthday
+                    </li>
+                    <li class="loyalty-programm__li">Early access to products</li>
+                    <li class="loyalty-programm__li">Exclusive offers & rewards</li>
+                </ul>
+            </article>
         </section>
         <footer class="footer">
             <section class="footer__rev-sub center">

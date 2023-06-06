@@ -1,0 +1,195 @@
+@import '../vars-and-mixins';
+@import '../nav-and-menuGeneral';
+@import '../footerGeneral';
+
+
+/* DESKTOP */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+summary {
+    display: block;
+    cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+.center {
+    padding-left: calc(50% - 570px);
+    padding-right: calc(50% - 570px);
+}
+
+.box {
+    position: relative;
+    overflow: hidden;
+}
+
+.top {
+    margin-bottom: 96px;
+
+    &__title {
+        @include font($fontStyle, $fontWeight, 24px, 29px, $accentColor);
+    }
+
+    &__title-block {
+        @include positioning (center, space-between);
+        background: #F8F3F4;
+        min-height: 150px;
+    }
+
+}
+
+.main {
+    margin-bottom: 128px;
+    display: flex;
+    gap: 128px
+}
+
+.registration {
+
+
+    &__title {
+        @include font($fontStyle, 300, 16px, 19px, #000);
+    }
+
+    &__text {
+        margin-bottom: 39px;
+        @include font($fontStyle, 300, 13px, 16px, #B1B1B1);
+    }
+
+    &__field {
+        @include font($fontStyle, 300, 13px, 16px, #B1B1B1);
+        width: 360px;
+        padding: 12px 17px 16px;
+        border: 1px solid #A4A4A4;
+        box-sizing: border-box;
+    }
+
+    &__form {
+        margin-bottom: 15px;
+        display: flex; 
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__radio-box {
+        margin-top: 11px;
+        margin-bottom: 13px;
+        display: flex;
+        gap: 20px;
+    }
+
+    &__label {
+        @include font($fontStyle, 300, 11px, 13px, #000);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__button {
+        box-sizing: border-box;
+        width: 167px;
+        padding: 16px 24px 17px 29px;
+        background-color: $accentColor;
+        display: flex;
+        gap: 20px;
+        @include font($fontStyle, 400, 14px, 17px, #fff);
+
+    }
+
+}
+
+.loyalty-programm {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+    &__text {
+        @include font($fontStyle, 300, 24px, 29px, #000);
+    }
+
+    &__ul {
+        padding-left: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__li {
+        @include font($fontStyle, 300, 24px, 29px, #000);
+        list-style-image: url(../img/registration/marker.svg);
+        padding-inline-start: 23px;
+    }
+}
+
+.footer {
+    &__rev-sub {
+        background-image: url(../img/footer/photo_subscribe.jpg);
+    }
+}
+
+
+/* TABLET */
+@import '../tabletGeneral';
+
+@media (max-width: 1156px) {
+    .main {
+        gap: 22px;
+    }
+
+    .loyalty-programm__text {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .loyalty-programm__li {
+        font-size: 16px;
+        line-height: 19px;
+    }
+}
+
+/* MOBILE */
+@import '../mobileGeneral';
+
+@media (max-width: 767px) {
+
+    .top__title-block {
+        justify-content: center;
+    }
+
+    
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width:351px) {
+    .main {
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-bottom: 100px;
+    }
+
+    .registration__field {
+        width: 304px;
+    }
+    
+}

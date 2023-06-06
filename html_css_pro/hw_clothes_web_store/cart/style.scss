@@ -65,10 +65,6 @@ summary::-webkit-details-marker {
 
 }
 
-.main {
-    margin-bottom: 128px;
-}
-
 .item {
 
     display: grid;
@@ -151,11 +147,11 @@ summary::-webkit-details-marker {
             margin-bottom: 12px;
         }
 
-        &_title-check{
+        &_title-check {
             @include font($fontStyle, 300, 16px, 19px, #000);
             margin-bottom: 21px;
 
-            &_colored{
+            &_colored {
                 color: $accentColor;
             }
         }
@@ -165,7 +161,6 @@ summary::-webkit-details-marker {
 
         &_l {
             @include font($fontStyle, $fontWeight, 22px, 26px, $contentColor);
-            opacity: 0.7;
             display: flex;
         }
 
@@ -174,7 +169,6 @@ summary::-webkit-details-marker {
             padding: 13px 17px 16px 17px;
             @include font($fontStyle, 300, 13px, 16px, $contentColor);
             border: 1px solid #4A4A4A;
-            opacity: 0.7;
         }
 
 
@@ -193,6 +187,7 @@ summary::-webkit-details-marker {
 }
 
 .cart-buttons {
+    margin-top: 88px;
     width: 652px;
     display: flex;
     flex-direction: row;
@@ -215,139 +210,150 @@ summary::-webkit-details-marker {
 
 
 /* TABLET */
+@import '../tabletGeneral';
 
-@media (max-width: 1024px) {
+@media (max-width: 1156px) {
+    .item {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 140px;
 
-    .center {
-        /* мин визуальный отсуп для планшета 8px */
-        padding-left: calc(50% - 368px);
-        padding-right: calc(50% - 368px);
-    }
+        &__cart {
+            width: 734px;
+            grid-column: span 2;
+        }
 
-    .products-catalog {
-        padding-bottom: 70px;
+        &__shipping-form {
+            order: 2;
+            margin-left: 0;
+            margin-top: -39px;
+        }
 
-        &__box {
-            padding-top: 72px;
-            padding-bottom: 33px;
-            grid-template: repeat(3, 3fr) / repeat(2, 2fr);
-            gap: 16px;
+        &__checkout {
+            order: 2;
+            margin-left: 0;
+        }
+
+        &__text_s {
+            width: 324px;
         }
     }
 
-    .footer__pros {
+    .cart-buttons {
+        grid-column: span 2;
+        width: 734px;
+        justify-content: center;
         gap: 49px;
-        flex-direction: column;
-        padding-top: 48px;
-        padding-bottom: 64px;
+        margin-top: 46px;
+        margin-bottom: 88px;
     }
 
-    .footer__rev-sub {
-        padding-top: 64px;
-        padding-bottom: 140px;
-        flex-direction: column;
-        gap: 48px;
-    }
 }
 
 /* MOBILE */
+@import '../mobileGeneral';
 
 @media (max-width: 767px) {
 
-    .center {
-        padding-left: calc(50% - 343px);
-        padding-right: calc(50% - 343px);
-    }
-
-    .top__content {
-        padding-left: calc(50% - 343px);
-        padding-right: calc(50% - 343px);
-        min-height: 363px;
+    .top__title-block {
         justify-content: center;
     }
 
-    .top__nav-panel__left-side {
-        padding-left: 16px;
-    }
+    .item {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-bottom: 96px;
+        justify-items: center;
 
-    .top__nav-panel__right_side {
-        padding-right: 16px;
-    }
-
-    .products-catalog {
-        padding-bottom: 85px;
-
-        &__box {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            gap: 16px;
-            padding-bottom: 40px;
-
-            &__item {
-                max-width: 343px;
-            }
-        }
-    }
-
-    .footer__pros {
-        gap: 47px;
-        padding-bottom: 81px;
-
-        &__item {
-            max-width: 343px;
+        &__cart {
+            width: 360px;
+            grid-column: span 1;
         }
 
-        &__rev-sub {
-            padding-bottom: 110px;
-
-            &__review {
-                max-width: 343px;
-            }
-
-            &__text {
-                font-size: 18px;
-                line-height: 22px;
-            }
-
-            &__subscribe {
-                max-width: 343px;
-
-                &__subtitle {
-                    font-size: 14px;
-                }
-            }
+        &__shipping-form {
+            order: 2;
+            margin-left: 0;
+            margin-bottom: 16px;
         }
+
+        &__checkout {
+            order: 2;
+            margin-left: 0;
+        }
+
+        &__content {
+            padding: 13px 17px;
+            gap: 4px;
+        }
+
+        &__text_s {
+            width: 324px;
+        }
+
+        &__text_l {
+            font-size: 14px;
+            line-height: 17px;
+        }
+
+        &__title_cart {
+            padding-bottom: 20px;
+            font-size: 16px;
+            line-height: 19px;
+        }
+
+        &__img {
+            width: 144px;
+        }
+
+
+        &__close-elem {
+            position: absolute;
+            top: 17px;
+            right: 12px;
+            width: 10px;
+        }
+
+        &__text_quantity {
+            width: 24px;
+            height: 15px;
+            margin-left: 15px;
+        }
+
     }
 
-    .footer__social-media {
-        min-height: 143px;
-        justify-content: space-between;
-        flex-direction: column;
-        padding-top: 43px;
-        padding-bottom: 9px;
+    .cart-buttons {
+        grid-column: span 1;
+        width: 360px;
+        justify-content: center;
+        gap: 9px;
+        margin-top: 0px;
+        margin-bottom: 38px;
     }
-}
 
-@media (max-width: 374px) {
-    .footer__rev-sub__form__email {
-        width: 176px;
+    .cart-button {
+        width: 174px;
+        height: 32px;
+        font-size: 12px;
+        line-height: 14px;
     }
 }
 
 @media (max-width:351px) {
 
-    .top__nav-panel__left-side {
-        padding-left: 8px;
+    .item__cart {
+        width: 310px;
     }
 
-    .top__nav-panel__right_side {
-        padding-right: 8px;
+    .item__text_s {
+        width: 274px;
     }
 
-    .products-catalog__box__item {
-        padding-left: 8px;
-        padding-right: 8px;
+    .item__checkout {
+        width: 310px;
+        padding: 32px 18px 38px;
     }
 
+    .cart-buttons {
+        width: 310px;
+    }
 }

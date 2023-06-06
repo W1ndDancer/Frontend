@@ -1,0 +1,29 @@
+@media (max-width: 1156px) {
+
+    .center {
+        /* мин визуальный отсуп для планшета 8px */
+        padding-left: calc(50% - 368px);
+        padding-right: calc(50% - 368px);
+    }
+
+    .top__content {
+        gap: 39px;
+        padding-left: calc(50% - 368px);
+        padding-right: calc(50% - 368px);
+    }
+
+    .footer__pros {
+        gap: 49px;
+        flex-direction: column;
+        padding-top: 48px;
+        padding-bottom: 64px;
+    }
+
+    .footer__rev-sub {
+        padding-top: 64px;
+        padding-bottom: 140px;
+        flex-direction: column;
+        gap: 48px;
+        background-position: 25% 62px;
+    }
+}

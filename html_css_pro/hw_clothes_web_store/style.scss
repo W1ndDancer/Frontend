@@ -263,25 +263,15 @@ img {
 
     &__rev-sub {
         background-image: url(img/footer/photo_subscribe.jpg);
+
     }
 }
 
 
 /* TABLET */
+@import 'tabletGeneral';
 
-@media (max-width: 1024px) {
-
-    .center {
-        /* мин визуальный отсуп для планшета 8px */
-        padding-left: calc(50% - 368px);
-        padding-right: calc(50% - 368px);
-    }
-
-    .top__content {
-        gap: 39px;
-        padding-left: calc(50% - 368px);
-        padding-right: calc(50% - 368px);
-    }
+@media (max-width: 1156px) {
 
     .top__title {
         font-size: 44px;
@@ -308,53 +298,12 @@ img {
             gap: 16px;
         }
     }
-
-    .footer__pros {
-        gap: 49px;
-        flex-direction: column;
-        padding-top: 48px;
-        padding-bottom: 64px;
-    }
-
-    .footer__rev-sub {
-        padding-top: 64px;
-        padding-bottom: 140px;
-        flex-direction: column;
-        gap: 48px;
-    }
 }
 
 /* MOBILE */
+@import 'mobileGeneral';
 
 @media (max-width: 767px) {
-
-    .center {
-        padding-left: calc(50% - 343px);
-        padding-right: calc(50% - 343px);
-    }
-
-    .mob-hide {
-        display: none;
-    }
-
-    .top__content {
-        padding-left: calc(50% - 343px);
-        padding-right: calc(50% - 343px);
-        min-height: 363px;
-        justify-content: center;
-    }
-
-    .top__nav-panel__left-side {
-        padding-left: 16px;
-    }
-
-    .top__nav-panel__right_side {
-        padding-right: 16px;
-    }
-
-    .top__text {
-        max-width: 263px;
-    }
 
     .top__title {
         font-size: 38px;
@@ -377,12 +326,12 @@ img {
         &__item {
             max-width: 343px;
         }
-    
+
         &__title {
             font-size: 24px;
             line-height: 29px;
         }
-    
+
         &__subtitle {
             font-size: 16px;
             line-height: 19px;
@@ -405,60 +354,9 @@ img {
         }
     }
 
-    .footer__pros {
-        gap: 47px;
-        padding-bottom: 81px;
-
-        &__item {
-            max-width: 343px;
-        }
-    
-        &__rev-sub {
-            padding-bottom: 110px;
-
-            &__review {
-                max-width: 343px;
-            }
-        
-            &__text {
-                font-size: 18px;
-                line-height: 22px;
-            }
-        
-            &__subscribe {
-                max-width: 343px;
-
-                &__subtitle {
-                    font-size: 14px;
-                }
-            }
-        }
-    }
-
-    .footer__social-media {
-        min-height: 143px;
-        justify-content: space-between;
-        flex-direction: column;
-        padding-top: 43px;
-        padding-bottom: 9px;
-    }
-}
-
-@media (max-width: 374px) {
-    .footer__rev-sub__form__email {
-        width: 176px;
-    }
 }
 
 @media (max-width:351px) {
-
-    .top__nav-panel__left-side {
-        padding-left: 8px;
-    }
-
-    .top__nav-panel__right_side {
-        padding-right: 8px;
-    }
 
     .offer__item {
         padding-left: 8px;
