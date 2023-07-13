@@ -1,0 +1,24 @@
+@mixin flexRowWrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+@mixin transformCenter {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@mixin sliderArrows{
+    width: 47px;
+    height: 47px;
+    background-color: rgba(42, 42, 42, 0.15);
+    border: none;
+}
+@mixin sliderArrowsHover{
+    width: 47px;
+    height: 47px;
+    background-color: rgba(42, 42, 42, 0.15);
+    border: none;
+    fill: $coralColor;
+    transition: .3s
+}

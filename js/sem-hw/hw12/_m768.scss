@@ -1,0 +1,144 @@
+@media (min-width: 1600px) {
+    .brand__img {
+         width: 800px;
+    }
+}
+
+@media (max-width: 1500px) {
+    .brand__name {
+        margin-top: 165px;
+        padding-left: 39px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .center {
+        padding-left: calc(50% - 368px);
+        padding-right: calc(50% - 368px);
+    }
+    
+    .brand__name {
+        margin-top: 138px;
+        padding-left: 42px;
+    }
+
+    .header__logo__search {
+        padding-left: 15px;
+    }
+
+    .header__menu {
+        padding-right: 25px;
+    }
+
+    .products__cards {
+        grid-template-columns: repeat(2, 360px);
+        gap: 16px;
+        margin-bottom: 36px;
+    }
+
+    .features {
+        padding-top: 48px;
+        padding-bottom: 67px;
+        
+        &__items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            flex-direction: column;
+        }
+    }
+
+    .products__button {
+        margin-bottom: 63px;
+    }
+
+    .subscribe {
+        padding-top: 64px;
+        padding-bottom: 140px;
+        flex-direction: column;
+        gap: 70px;
+        align-items: center;
+        
+        &__item__right {
+            padding-top: 0;
+        }
+    }
+
+    .footer__item__left {
+        padding-left: 16px;
+    }
+
+    .footer__item__right {
+        padding-left: 17px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .offer {
+        gap: 20px;
+        row-gap: 17px;
+    }
+
+    .brand__heading {
+        font-size: 44px;
+        line-height: 53px;
+    }
+
+    .brand__description {
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    .products__title {
+        margin-top: 106px;
+    }
+
+    .products__heading {
+        margin-bottom: 3px;
+    }
+
+    .products__text {
+        margin-bottom: 73px;
+    }
+
+    .subscribe {
+        background-image: url(../img/photo_subscribe_tablet.svg);
+    
+        &__text__left {
+            line-height: 39px;
+            margin-bottom: 11px;
+        }
+    }
+
+    .footer {
+        padding-right: 33px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .registration {
+        gap: 22px;
+        &__description {
+            max-width: 354px;
+            gap: 22px;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+}
+@media (max-width: 1024px) {
+    .registration {
+        padding-top: 38px;
+        &__description {
+            gap: 29px;
+        }
+        &__list {
+            gap: 20px;
+        }
+    }
+    
+}
+    

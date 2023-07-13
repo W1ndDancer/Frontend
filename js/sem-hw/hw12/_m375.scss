@@ -1,0 +1,190 @@
+@media (max-width: 767px) {
+    .center {
+        padding-left: calc(50% - 179.5px);
+        padding-right: calc(50% - 179.5px);
+    }
+
+    .header {
+        padding-bottom: 15px;
+        
+        &__logo__search {
+            padding-left: 8px;
+        }
+
+        &__menu {
+            padding-right: 0;
+        }
+    }
+
+    .burger {
+        padding-top: 5px;
+        margin-right: 7px;
+    }
+
+    .account,
+    .cart-icon {
+        display: none;
+    }
+
+    .brand {
+        padding-right: 50px;
+        display: block;
+        
+        &__name {
+            align-items: center;
+            justify-content: center;
+            padding-top: 146px;
+            padding-bottom: 147px;
+            margin: 0;
+            padding-left: 48px;
+        }
+
+        &__img {
+            display: none;
+        }
+
+        &__line {
+            width: 12px;
+            height: 61px;
+            margin-right: 16px;
+        }
+
+        &__heading {
+            font-size: 38px;
+            line-height: 46px;
+        }
+
+        &__description {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+
+    .offer {
+        display: flex;
+        flex-direction: column;
+        margin-left: 8px;
+        margin-right: 8px;
+        padding-top: 63px;
+        gap: 29px;
+    }
+
+    .offer__upperside {
+        max-width: 343px;
+    }
+
+    .products__cards {
+        grid-template-columns: repeat(1, 360px);
+        margin-bottom: 41px;
+    }
+
+    .products__title {
+        margin-top: 63px;
+    }
+
+    .products__text {
+        margin-bottom: 63px;
+    }
+
+    .products__button {
+        margin-bottom: 96px;
+    }
+
+    .features {
+        padding-bottom: 82px;
+        
+        &__items {
+            gap: 45px;
+        }
+
+        &__title {
+            margin-bottom: 13px;
+        }
+    }
+
+    .subscribe {
+        background-image: url(../img/photo_subscribe_mobile.svg);
+        padding-bottom: 109px;
+        gap: 66px;
+
+        &__text {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        &__image {
+            margin-bottom: 22px;
+        }
+
+        &__title {
+            line-height: 37px;
+            margin-bottom: -5px;
+        }
+
+        &__text__left {
+            line-height: 22px;
+            font-size: 14px;
+            margin-bottom: 21px;
+        }
+
+        &__input {
+            width: 198px;
+            padding-right: 29px;
+        }
+
+        &__button {
+            padding-left: 14px;
+            width: 100px;
+        }
+    }
+
+    .card__price {
+        margin-bottom: 18.5px;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 43px;
+        padding-bottom: 9px;
+        gap: 40px;
+        
+        &__item__right {
+            padding-left: 0px;
+        }
+
+        &__item__left {
+            padding-left: 0;
+        }
+    }
+ 
+}
+@media(max-width: 374px) {
+    .center {
+        padding-left: calc(50% - 158px);
+        padding-right: calc(50% - 158px);
+    }
+
+    .brand__heading {
+        font-size: 36px;
+    }
+
+    .brand__description {
+        font-size: 18px;
+    }
+
+    .brand__name {
+        padding-left: 30px;
+        padding-right: 0;
+    }
+
+    .products__cards {
+        grid-template-columns: repeat(1, 310px);
+        gap: 30px;
+    }
+
+    .subscribe__input {
+        width: 150px;
+    }
+}
