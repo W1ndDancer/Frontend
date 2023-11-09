@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>VUE.js S1</title>
+</head>
+
+<body>
+    <div id="vue">
+        <div class="TASK 1">
+            <h2>TASK 1</h2>
+            {{ message }}
+        </div>
+        <div class="TASK 2">
+            <h2>TASK 2</h2>
+            <p>Товаров в корзине: {{ count }}</p>
+            <button @click="click">{{ buyMsg }}</button>
+        </div>
+        <div class="TASK 3">
+            <h2>TASK 3</h2>
+            <button @click="clickT31">Мне исполнилось 14</button>
+            <span>&nbsp;&nbsp;&nbsp;</span>
+            <button @click="clickT32">Я младше 14</button>
+            <p v-show="show">{{ permitionMsg }}</p>
+        </div>
+        <div class="TASK4">
+            <h2>TASK 4</h2>
+            <button @click="clickT4">...</button>
+            <p class="text-focus-in" v-show="hidenInfo">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deleniti fugit, odio, mollitia, alias iusto inventore at expedita eveniet eius ad distinctio culpa
+                quisquam ipsa sunt in libero pariatur fugiat accusantium nobis velit? Explicabo voluptate dolorem
+                doloremque ratione enim ipsam quod ipsum. Sequi doloremque enim harum tempore dolorum non architecto
+                alias assumenda quo ipsam, modi sint asperiores voluptatem provident cum dicta quibusdam esse corporis
+                ad animi aliquam doloribus. Praesentium in veritatis hic eum. Fugit quia voluptates qui tempora
+                praesentium commodi porro eius at hic! Necessitatibus doloribus ullam debitis quo minima? Ad vel quos
+                expedita consequatur alias debitis tenetur inventore odit ullam?</p>
+        </div>
+        <div class="TASK5">
+            <h2>TASK 5</h2>
+            <button @click="getRndmNum">Сгенерировать случайное число</button>
+            <h3 v-show="showRndmNum"> {{ rndmNumber }}</h3>
+            <p> {{ rndmNumberMsg }} </p>
+        </div>
+    </div>
+
+    <script>
+        const VueApp = {
+            data() {
+                return {
+                    message: 'Hello Vue!!',
+                    buyMsg: 'Купить',
+                    permitionMsg: '',
+                    count: 0,
+                    show: false,
+                    hidenInfo: false,
+                    showRndmNum: false,
+                    rndmNumber: 0,
+                    rndmNumberMsg: ''
+                }
+            },
+            methods: {
+                click() {
+                    if (this.count < 1) {
+                        this.count++
+                        this.buyMsg = 'Товар в корзине'
+                    }
+                },
+                clickT31() {
+                    this.permitionMsg = 'Можете заказать товар',
+                        this.show = !this.show
+                },
+                clickT32() {
+                    this.permitionMsg = 'Доступ закрыт',
+                        this.show = !this.show
+                },
+                clickT4() {
+                    this.hidenInfo = !this.hidenInfo
+                },
+                getRndmNum() {
+                    this.showRndmNum = true,
+                        this.rndmNumber = Math.floor(Math.random() * 10 + 1)
+                    if (this.rndmNumber < 5) {
+                        this.rndmNumberMsg = 'Число меньше 5'
+                    } else if (this.rndmNumber >= 5 && this.rndmNumber < 10) {
+                        this.rndmNumberMsg = 'Число от 5 до 9'
+                    } else {
+                        this.rndmNumberMsg = 'Число = 10'
+                    }
+
+                }
+            }
+        }
+
+        Vue.createApp(VueApp).mount('#vue')
+    </script>
+</body>
+
+</html>

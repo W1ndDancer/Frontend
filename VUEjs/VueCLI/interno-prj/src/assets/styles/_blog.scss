@@ -1,0 +1,49 @@
+.main-blog {
+    margin-top: 50px;
+    margin-bottom: 200px;
+}
+
+.banner {
+    position: relative;
+    min-height: 356px;
+    background-image: url('@/assets/img/blog/blog-banner.jpg');
+    display: flex;
+    justify-content: center;
+
+    &__info {
+        position: absolute;
+        bottom: 0;
+        width: 503px;
+        height: 178px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-top-left-radius: 37px;
+        border-top-right-radius: 37px;
+        background: #fff;
+
+    }
+}
+
+.latest-post {
+    margin-top: 200px;
+    display: grid;
+    gap: 28px;
+}
+
+.articles-news-block {
+    margin-top: 150px;
+
+    &__item_big {
+        flex-direction: row;
+        gap: 65px;
+    }
+}
+
+.articles-news-block__item-info_big {
+    width: 489px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

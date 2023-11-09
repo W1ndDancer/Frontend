@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Vue.js S3</title>
+</head>
+
+<body>
+    <div id="vueS3" style="margin: 50px 100px;">
+        <div class="task1">
+            <h2>TASK 1</h2>
+            <p>Создание простого счетчика: Создайте компонент счетчика, который имеет кнопку "+" и кнопку "-", и
+                отображает текущее значение счетчика. При нажатии на кнопки счетчик должен увеличиваться или уменьшаться
+                соответственно.</p>
+        </div>
+        <count-component></count-component>
+        <task-2></task-2>
+    </div>
+
+    <script src="components.js"></script>
+    <script src="comp2.js"></script>
+    <script>
+        Vue.createApp({
+            components: {
+                'count-component': CountComponent,
+                'task-2': Task2
+            },
+        }).mount("#vueS3")
+    </script>
+</body>
+
+</html>

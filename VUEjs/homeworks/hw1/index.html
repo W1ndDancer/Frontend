@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>VUE.js HW1</title>
+</head>
+
+<body>
+    <div id="vue">
+        <div class="TASK 1">
+            <p>Создать кнопку "Перевернуть". При клике на кнопку текст кнопки, должен перевернуться и отобразиться в
+                обратном порядке.</p>
+            <br>
+            <button :class="{ task1: isActive }" @click="clickT1"> {{msg}} </button>
+        </div>
+        <div class="TASK 2">
+            <p>Есть список элементов. Пользователь может добавлять новые элементы списка с текстом “Новый элемент
+                списка” нажав на кнопку "Добавить".</p>
+            <ul>
+                <li v-for="(name, index) in names" @click="clickT3(index)">{{ name }}</li>
+            </ul>
+            <br>
+            <button @click="clickT2">Добавить элемент</button>
+        </div>
+        <div class="TASK 3">
+            <p>При клике на элемент списка он должен быть удален. (по желанию)</p>
+            <p>DONE</p>
+        </div>
+    </div>
+
+    <script>
+        const VueApp = {
+            data() {
+                return {
+                    msg: "Перевернуть",
+                    isActive: false,
+                    names: ['Frodo', 'Sam', 'Meriadoc', 'Peregrin']
+                }
+            },
+            methods: {
+                clickT1() {
+                    this.msg = this.msg.split("").reverse().join("");
+                    this.isActive = !this.isActive;
+                },
+                clickT2() {
+                    this.names.push('Новый элемент');
+                },
+                clickT3(index) {
+                    this.names.splice(index, 1);
+                }
+            }
+        }
+
+        Vue.createApp(VueApp).mount('#vue')
+    </script>
+</body>
+
+</html>

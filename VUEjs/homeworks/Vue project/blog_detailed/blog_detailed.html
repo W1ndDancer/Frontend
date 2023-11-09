@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Blog</title>
+</head>
+
+<body id="vueApp">
+    <header-component></header-component>
+    <main class="main">
+        <div class="banner_blog-detailed">
+        </div>
+        <div class="full-post-box center">
+            <div class="full-post">
+                <h2 class="title title_50">{{detailedArticle.articleTitle}}</h2>
+                <img :src="detailedArticle.imgSrc" alt="article main photo" class="img img_blog-detailed">
+                <div class="about-article">
+                    <p class="text text_16">{{detailedArticle.date}}</p>
+                    <nav class="breadcrumb">
+                        <ul class="breadcrumb__ul">
+                            <li class="breadcrumb__li"><a class="text text_16" href="../index.html">Home</a></li>
+                            <li class="breadcrumb__li"><a class="text text_16" href="blog.html">Blog</a></li>
+                            <li class="breadcrumb__li"><a class="text text_16"
+                                    href="blog_detailed.html">{{detailedArticle.articleTitle}}</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <p class="text text_22">
+                    Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to
+                    popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have
+                    suffered alteration in some form, by injecthumour, or randomised words which don't look even
+                    slightly believable.
+                </p>
+                <p class="text text_22">
+                    Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to
+                    repeat predefined chunks as necessary.
+                </p>
+                <div class="quote">
+                    <img src="../img/quote.png" alt="quote img" class="img">
+                    <h3 class="title title_quote">The details are not the details.</h3>
+                    <h3 class="title title_quote">They make the design.</h3>
+                </div>
+                <h2 class="title title_50">Design sprints are great</h2>
+                <p class="text text_22">
+                    Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to
+                    popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have
+                    suffered.
+                </p>
+                <ol class="text text_22 text_ol">
+                    <li class="text text_22 text_li">Contrary to popular belief.There are many variations of passages of
+                        Lorem
+                        Ipsum
+                        available, but the majority have suffered.</li>
+                    <li class="text text_22 text_li">Contrary to popular belief.There are many variations of passages of
+                        Lorem
+                        Ipsum
+                        available, but the majority have suffered.</li>
+                    <li class="text text_22 text_li">Contrary to popular belief.There are many variations of passages of
+                        Lorem
+                        Ipsum
+                        available, but the majority have suffered.</li>
+                </ol>
+                <img src="../img/blog_detailed/2.jpg" alt="img" class="img img_blog-detailed">
+            </div>
+            <div class="full-post-filters">
+                <h3 class="title title_25">Tags</h3>
+                <div class="full-post-filters__tags">
+                    <div class="full-post-filters__tag" v-for="i in buttons">
+                        <label :data-id="i.id" @change="sortArticles"><input :data-id="i.id" @click="filterArticles"
+                                type="radio" name="radio">{{i.text}}</label>
+                    </div>
+                </div>
+                <div class="articles-news-block">
+                    <h2 class="title title_25">Filtred Articles</h2>
+                    <div class="articles-news-block__items articles-news-block__items_blog-detailed">
+                        <div class="articles-news-block__item" v-for="i in filtredArticles"
+                            @click="ShowDetailedArticle(i)">
+                            <div class="articles-news-block__item-demo">
+                                <img :src="i.imgSrc" alt="kitchen" class="img img_articles-news-item">
+                                <div class="text text_16 articles-news-block__room-name-el">{{i.roomDesign}}</div>
+                            </div>
+                            <div class="articles-news-block__item-info">
+                                <h4 class="title title_25" v-html="i.articleTitle"></h4>
+                                <div class="date-and-btn-block">
+                                    <p class="text text_16">{{i.date}}</p>
+                                    <svg class="rnd-btn" xmlns="http://www.w3.org/2000/svg" width="52" height="53"
+                                        viewBox="0 0 52 53" fill="none">
+                                        <circle cx="26" cy="26.267" r="26" fill="#F4F0EC" />
+                                        <path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer-component></footer-component>
+
+    <script src="../components/header.js"></script>
+    <script src="../components/footer.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    buttons: [
+                        { id: 'kitchen', text: 'Kitchen' }, { id: 'bedroom', text: 'Bedroom' }, { id: 'living', text: 'Living' }, { id: 'interior-design', text: 'Interior Design' }, { id: 'architecture', text: 'Architecture' }, { id: 'building', text: 'Building' }, { id: 'show-all', text: 'Show All' }],
+                    articlesData: [
+                        {
+                            id: 'kitchen',
+                            imgSrc: '../img/articles_db/Photo-2.jpg',
+                            roomDesign: 'Kitchen Design',
+                            articleTitle: 'Lets Get Solution Building Construction Work',
+                            date: '26 December,2022'
+                        },
+                        {
+                            id: 'living',
+                            imgSrc: '../img/articles_db/Photo-3.jpg',
+                            roomDesign: 'Living Design',
+                            articleTitle: 'Low Cost Latest Invented Interior Designing Ideas.',
+                            date: '22 October,2022'
+                        },
+                        {
+                            id: 'interior-design',
+                            imgSrc: '../img/articles_db/Photo-4.jpg',
+                            roomDesign: 'Interior Design',
+                            articleTitle: 'Best For Any Office & Business Interior Solution',
+                            date: '20 October,2022'
+                        },
+                        {
+                            id: 'kitchen',
+                            imgSrc: '../img/articles_db/Photo-5.jpg',
+                            roomDesign: 'Kitchen Design',
+                            articleTitle: 'Lets Get Solution Building Construction Work',
+                            date: '14 October,2022'
+                        },
+                        {
+                            id: 'living',
+                            imgSrc: '../img/articles_db/Photo-6.jpg',
+                            roomDesign: 'Living Design',
+                            articleTitle: 'Low Cost Latest Invented Interior Designing Ideas.',
+                            date: '30 September,2022'
+                        },
+                        {
+                            id: 'building',
+                            imgSrc: '../img/articles_db/Photo-7.jpg',
+                            roomDesign: 'Interior Design',
+                            articleTitle: 'Best For Any Office & Business Interior Solution',
+                            date: '27 September,2022'
+                        },
+                        {
+                            id: 'architecture',
+                            imgSrc: '../img/blog_detailed/1.jpg',
+                            articleTitle: 'Lets Get Solution Building Construction Work',
+                            date: '26 December,2022',
+                            roomDesign: 'Interior Design',
+                        }
+                    ],
+                    filtredArticles: [],
+                    detailedArticle: {
+                        id: 'architecture',
+                        imgSrc: '../img/blog_detailed/1.jpg',
+                        articleTitle: 'Lets Get Solution Building Construction Work',
+                        date: '26 December,2022'
+                    }
+                }
+            },
+            components: {
+                'header-component': HeaderComponent,
+                'footer-component': FooterComponent
+            },
+            methods: {
+                sortArticles(e) {
+                    if (document.querySelector('.full-post-filters__tag_active') !== null) {
+                        document.querySelector('.full-post-filters__tag_active').classList.remove('full-post-filters__tag_active');
+                    }
+                    const divButton = e.target.closest('.full-post-filters__tag');
+                    divButton.classList.add('full-post-filters__tag_active');
+                },
+                filterArticles(e) {
+                    if (e.target.dataset.id == 'show-all') {
+                        this.filtredArticles = this.articlesData
+                    } else {
+                        this.filtredArticles = this.articlesData.filter(article => article.id === e.target.dataset.id);
+                    }
+                },
+                ShowDetailedArticle(index) {
+                    this.detailedArticle = {
+                        imgSrc: index.imgSrc,
+                        articleTitle: index.articleTitle,
+                        date: index.date
+                    }
+                }
+            },
+        }).mount('#vueApp')
+    </script>
+</body>
+
+</html>

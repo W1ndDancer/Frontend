@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.center {
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+}
+
+.img {
+  max-width: 100%;
+}
+.img_logo {
+  width: 34px;
+}
+
+.logo {
+  width: 177px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}/*# sourceMappingURL=commonStyles.css.map */

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>VUE.js S2</title>
+</head>
+
+<body>
+    <div class="s2" id="vueS2">
+        <div class="task1">
+            <div class="task1__info">
+                <h2>Задание 1</h2>
+                <p>
+                    Вы разрабатываете страницу для отображения информации о товаре. У вас есть объект product, который
+                    содержит информацию о товаре, включая название, цену и URL изображения товара. Вам необходимо
+                    отобразить
+                    эту информацию на странице с использованием v-bind.
+                </p>
+                <p>
+                    Добавьте кнопку, которая будет изменять цену товара. При нажатии на кнопку должна генерироваться
+                    скидка
+                    на товар от 1 до 20% и обновиться цена товара в соответствии с значением скидки
+                </p>
+            </div>
+            <div class="product">
+                <img :src="productT1.src" alt="product img">
+                <h2>{{productT1.name}}</h2>
+                <p>{{productT1.price}}</p>
+                <button class="sale" @click.once="getSale">Получить скидку</button>
+            </div>
+        </div>
+        <div class="task2">
+            <div class="task2__info">
+                <h2>Задание 2</h2>
+                <p>Вы разрабатываете простое приложение для отображения списка пользователей. У вас есть массив объектов
+                    users, где каждый объект представляет одного пользователя с его именем и возрастом. Вам необходимо
+                    отобразить каждого пользователя из массива в виде списка на странице.</p>
+            </div>
+            <ul>
+                <li v-for="i in users">{{`${i.id}. ${i.name}, ${i.age} лет`}}</li>
+            </ul>
+        </div>
+        <div class="task3">
+            <div class="task3__info">
+                <h2>Задание 3</h2>
+                <p>
+                    Вы разрабатываете приложение для создания списка покупок. У вас есть массив объектов items, где
+                    каждый объект представляет товар с его названием и количеством. Вам необходимо отобразить список
+                    товаров, предоставить возможность изменять количество каждого товара и отмечать товары, которые уже
+                    куплены.
+                </p>
+            </div>
+            <ul>
+                <li v-for="i in prod">
+                    <input v-model.number="i.quantity" type="text" />
+                    <input type="checkbox" :id="i.id">
+                    <label :for="i.id">{{i.name}}</label>
+                </li>
+            </ul>
+        </div>
+        <div class="task4">
+            <div class="task4__info">
+                <h2>Задание 4</h2>
+                <p>Вы разрабатываете приложение для управления списком контактов. У вас есть форма с полями "Имя",
+                    "Фамилия" и "Email", где пользователь может вводить информацию о новом контакте. После добавления
+                    контакта он должен отображаться в списке контактов. Требуется связать форму с данными и отображать
+                    список контактов на странице.</p>
+            </div>
+            <form action="#">
+                <label>
+                    <p>Имя</p>
+                    <input v-model.trim="contact.name" type="text" />
+                    <p>Фамилия</p>
+                    <input v-model.trim="contact.surname" type="text" />
+                    <p>Email</p>
+                    <input v-model.trim="contact.email" type="email" />
+                    <br> <br>
+                    <button type="button" @click="addContact">Добавить контакт</button>
+                </label>
+            </form>
+            <hr>
+            <ul>
+                <p v-if="contacts.length===0">Список контактов пуст</p>
+                <li v-for="i in contacts"> {{ `${i.id}. ${i.name} ${i.surname} e-mail: ${i.email}` }} </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const vueApp = {
+            data() {
+                return {
+                    //task 1
+                    productT1: {
+                        name: "rofl",
+                        price: 100,
+                        src: "photo.jpg"
+                    },
+                    //task 2
+                    users: [
+                        { id: 1, name: 'Иван', age: 25 },
+                        { id: 2, name: 'Мария', age: 30 },
+                        { id: 3, name: 'Алексей', age: 35 },
+                        { id: 4, name: 'Елена', age: 28 }
+                    ],
+                    //task3
+                    prod: [
+                        { id: 1, name: 'Молоко', quantity: 2 },
+                        { id: 2, name: 'Хлеб', quantity: 1 },
+                        { id: 3, name: 'Капуста', quantity: 3 },
+                        { id: 4, name: 'Мясо', quantity: 3 }
+                    ],
+                    //task4
+                    contacts: [],
+                    contact: {
+                        id: 1,
+                    },
+                    id: 1
+                }
+            },
+            methods: {
+                getSale() {
+                    this.productT1.price = this.productT1.price * (1 - (Math.floor(Math.random() * 20 + 1)) / 100)
+                },
+                addContact() {
+                    this.contacts.push(this.contact)
+                    this.id++
+                    this.contact = {
+                        id: this.id,
+                        name: '',
+                        surname: '',
+                        email: ''
+                    }
+                }
+            },
+        }
+
+        Vue.createApp(vueApp).mount("#vueS2")
+    </script>
+</body>
+
+</html>

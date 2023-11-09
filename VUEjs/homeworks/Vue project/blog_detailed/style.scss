@@ -1,0 +1,93 @@
+@import '../common-styles/vars-mixins.scss';
+@import '../common-styles/commonStyles.scss';
+@import '../common-styles/articles-news-block.scss';
+
+.main {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.banner_blog-detailed {
+    min-height: 356px;
+    background-image: url("../img/blog-detailed-banner.jpg");
+}
+
+.full-post-box {
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.full-post {
+    max-width: 799px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.img_blog-detailed {
+    border-radius: 50px;
+}
+
+.about-article {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quote {
+    border-radius: 50px;
+    background-color: #F4F0EC;
+    padding: 63px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.text_ol {
+    list-style-type: none;
+    /* Убираем исходные маркеры */
+    counter-reset: num;
+    /* Задаём имя счетчика */
+}
+
+.text_li::before {
+    content: counter(num) '. ';
+    /* Выводим число */
+    counter-increment: num;
+    /* Увеличиваем значение счётчика */
+    color: $primaryColor1;
+}
+
+.full-post-filters {
+    max-width: 345px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    &__tag {
+        padding: 9px 30px;
+        border-radius: 10px;
+        background: #F4F0EC;
+        @include text(18px, $fontWeight, $lineHeight, 0.36px);
+
+        & input[type="radio"] {
+            display: none;
+        }
+
+        &_active {
+            background-color: $primaryColor2;
+            color: #fff;
+        }
+    }
+}
+
+.articles-news-block__items_blog-detailed {
+    grid-template-columns: 1fr;
+}

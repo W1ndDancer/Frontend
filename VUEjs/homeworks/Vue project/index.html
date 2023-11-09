@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Home</title>
+</head>
+
+<body id="vueApp">
+    <header-component></header-component>
+    <main class="main">
+        <div class="get-started center">
+            <img src="img/Photo.jpg" alt="background" class="img img_get-started">
+            <div class="get-started__info">
+                <h2 class="title title_65">Let Your Home Unique</h2>
+                <p class="text text_22">There are many variations of the passages of
+                    lorem Ipsum fromavailable, majority.</p>
+                <div class="rect-btn">Get Started<img src="img/arrow.svg" alt="arrow"></div>
+            </div>
+        </div>
+        <div class="projects-info center">
+            <h3 class="title title_50">Follow Our Projects</h3>
+            <p class="text text_22">It is a long established fact that a reader will be distracted by the of readable
+            </p>
+            <p class="text text_22">content of page lookings at its layouts points.</p>
+        </div>
+        <div class="projects-block center">
+            <div class="projects-block__item">
+                <img src="img/cards_db/Photo-2.jpg" alt="project img" class="img img_projects-block-tl">
+                <div class="projects-block__info">
+                    <h4 class="title title_25">Modern Kitchan</h4>
+                    <p class="text text_22">Decor / Artchitecture</p>
+                </div>
+                <svg class="rnd-btn" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70"
+                    fill="none">
+                    <circle cx="35" cy="35" r="35" fill="#F4F0EC" />
+                    <path d="M32 44L40 35L32 26" stroke="#292F36" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="projects-block__item">
+                <img src="img/cards_db/Photo-3.jpg" alt="project img" class="img img_projects-block-tr">
+                <div class="projects-block__info">
+                    <h4 class="title title_25">Modern Kitchan</h4>
+                    <p class="text text_22">Decor / Artchitecture</p>
+                </div>
+                <svg class="rnd-btn" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70"
+                    fill="none">
+                    <circle cx="35" cy="35" r="35" fill="#F4F0EC" />
+                    <path d="M32 44L40 35L32 26" stroke="#292F36" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="projects-block__item">
+                <img src="img/cards_db/Photo-4.jpg" alt="project img" class="img img_projects-block-bl">
+                <div class="projects-block__info">
+                    <h4 class="title title_25">Modern Kitchan</h4>
+                    <p class="text text_22">Decor / Artchitecture</p>
+                </div>
+                <svg class="rnd-btn" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70"
+                    fill="none">
+                    <circle cx="35" cy="35" r="35" fill="#F4F0EC" />
+                    <path d="M32 44L40 35L32 26" stroke="#292F36" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="projects-block__item">
+                <img src="img/cards_db/Photo-5.jpg" alt="project img" class="img img_projects-block-br">
+                <div class="projects-block__info">
+                    <h4 class="title title_25">Modern Kitchan</h4>
+                    <p class="text text_22">Decor / Artchitecture</p>
+                </div>
+                <svg class="rnd-btn" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70"
+                    fill="none">
+                    <circle cx="35" cy="35" r="35" fill="#F4F0EC" />
+                    <path d="M32 44L40 35L32 26" stroke="#292F36" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+        <div class="counter-block">
+            <div class="counter vertical-line">
+                <h3 class="title title_counter">12</h3>
+                <p class="text text_counter">Years Of Experiance</p>
+            </div>
+            <div class="counter vertical-line">
+                <h3 class="title title_counter">95</h3>
+                <p class="text text_22">Success Project</p>
+            </div>
+            <div class="counter vertical-line">
+                <h3 class="title title_counter">15</h3>
+                <p class="text text_counter">Active Project</p>
+            </div>
+            <div class="counter">
+                <h3 class="title title_counter">95</h3>
+                <p class="text text_counter">Happy Customers</p>
+            </div>
+        </div>
+        <div class="articles-news-block center">
+            <h3 class="title title_50 text-center">Articles & News</h3>
+            <p class="text text_22 text-center">It is a long established fact that a reader will be distracted by the of
+                readable content<br>of a page when lookings at its layouts the points of using.</p>
+            <div class="articles-news-block__items">
+                <div class="articles-news-block__item" v-for="i in articlesData">
+                    <div class="articles-news-block__item-demo">
+                        <img :src="i.imgSrc" :alt="i.imgAlt" class="img img_articles-news-item">
+                        <div class="text text_16 articles-news-block__room-name-el">{{i.roomDesign}}</div>
+                    </div>
+                    <div class="articles-news-block__item-info">
+                        <h4 class="title title_25"><a href="blog_detailed/blog_detailed.html">{{i.articleTitle}}</a>
+                        </h4>
+                        <div class="date-and-btn-block">
+                            <p class="text text_16">{{i.date}}</p>
+                            <a href="blog_detailed/blog_detailed.html">
+                                <svg class="rnd-btn" xmlns="http://www.w3.org/2000/svg" width="52" height="53"
+                                    viewBox="0 0 52 53" fill="none">
+                                    <circle cx="26" cy="26.267" r="26" fill="#F4F0EC" />
+                                    <path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer-component></footer-component>
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    articlesData: [
+                        {
+                            imgSrc: 'img/articles_db/Photo-2.jpg',
+                            imgAlt: 'Kitchen',
+                            roomDesign: 'Kitchen Design',
+                            articleTitle: 'Lets Get Solution Building Construction Work',
+                            date: '26 December,2022'
+                        },
+                        {
+                            imgSrc: 'img/articles_db/Photo-3.jpg',
+                            imgAlt: 'Living',
+                            roomDesign: 'Living Design',
+                            articleTitle: 'Low Cost Latest Invented Interior Designing Ideas.',
+                            date: '22 October,2022'
+                        },
+                        {
+                            imgSrc: 'img/articles_db/Photo-4.jpg',
+                            imgAlt: 'Interior',
+                            roomDesign: 'Interior Design',
+                            articleTitle: 'Best For Any Office & Business Interior Solution',
+                            date: '2 January,2023'
+                        }
+                    ]
+                }
+            },
+            components: {
+                'header-component': HeaderComponent,
+                'footer-component': FooterComponent,
+            },
+        }).mount('#vueApp')
+    </script>
+</body>
+
+</html>

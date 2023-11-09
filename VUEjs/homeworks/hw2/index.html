@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>VUE.js HW2</title>
+</head>
+<body>
+    <div id="vueHW2">
+        <h2>Задание</h2>
+        <p>Вы разрабатываете приложение для отображения и сортировки списка товаров. У вас есть массив объектов products, где каждый объект представляет товар с его названием и ценой. Вам необходимо отобразить список товаров и предоставить пользователю возможность сортировать товары по цене (по возрастанию и по убыванию).</p>
+        <ul>
+            <li v-for="i in prod" :key="i.id">
+                {{ `${i.name}: ${i.price} Kc` }}
+            </li>
+        </ul>
+        <button @click="sortHighToLow">Сортировать по убыванию</button>
+        <p></p>
+        <button  @click="sortLowToHigh">Сортировать по возрастанию</button>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    prod: [
+                        { name: 'Молоко', price: 22 },
+                        { name: 'Хлеб', price: 45 },
+                        { name: 'Капуста', price: 50 },
+                        { name: 'Говядина', price: 170 },
+                        { name: 'Сыр', price: 280 },
+                        { name: 'Морковка', price: 14 },
+                        { name: 'Свинина', price: 130 },
+                        { name: 'Масло', price: 39 }
+                    ]
+                }
+            },
+            methods: {
+                sortHighToLow() {
+                    this.prod.sort((a, b) => a.price > b.price ? 1 : -1);
+                },
+                sortLowToHigh() {
+                    this.prod.sort((a, b) => a.price < b.price ? 1 : -1);
+                }
+            },
+        }).mount('#vueHW2')
+    </script>
+</body>
+</html>
