@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .news {
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .news__item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            background-color: lightgray;
+            padding: 15px;
+        }
+
+        .news__item_text {
+            margin-bottom: 10%;
+        }
+
+        .news__item_textarea {
+            max-width: 550px;
+            margin-bottom: 50px;
+        }
+
+        .load {
+            position: absolute;
+            bottom: 10px;
+        }
+
+        .new-new {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>Отзывы покупателей</h1>
+        <article id="news" class="news">
+
+        </article>
+    </section>
+    <script src="task_2.js"></script>
+</body>
+
+</html>

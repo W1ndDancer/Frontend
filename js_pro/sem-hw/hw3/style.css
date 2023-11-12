@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul {
+    cursor: pointer;
+}
+
+textarea {
+    width: 650px;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navigation {
+    display: flex;
+    padding: 10px 20px;
+}
+
+.navigation__list {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
+.navigation__link {
+    color: black;
+}
+
+.add-review {
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.add-review__title {
+    text-align: center;
+}
+
+.input {
+    padding: 2px 10px;
+    border-radius: 10px;
+    border: 1px solid red;
+    background: #97936612;
+}
+
+.button {
+    padding: 10px 20px;
+    border: 1px solid red;
+    background-color: white;
+    width: 200px;
+    border-radius: 10px;
+    margin: auto;
+    color: black;
+    transition: .3s;
+}
+
+.button:hover {
+    background-color: black;
+    color: red;
+}
+
+.all-reviews {
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.all-reviews__title {
+    text-align: center;
+}
+
+.show-review {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.reviews-item {
+    padding-left: 20px;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.delete-button {
+    width: 200px;
+    align-self: end;
+}
