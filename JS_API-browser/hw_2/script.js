@@ -18,9 +18,9 @@ function Slider(sldrId) {
 };
 
 Slider.defaults = {
-	loop: true,     
-	arrows: true,   
-	dots: true      
+	loop: true,
+	arrows: true,
+	dots: true
 };
 
 Slider.prototype.elemPrev = function(num) {
@@ -36,7 +36,7 @@ Slider.prototype.elemPrev = function(num) {
 		};
 		this.rightArrow.style.display = 'block';
 	};
-	
+
 	this.sldrElements[this.currentElement].style.opacity = '1';
 	this.sldrElements[prevElement].style.opacity = '0';
 
