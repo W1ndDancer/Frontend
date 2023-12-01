@@ -51,7 +51,7 @@
                     </div>
                     <div class="projects-block__info-el">
                         <div class="projects-block__text-el">
-                            <router-link to="/project-details" class="title title_25">{{ item.title }}</router-link>
+                            <router-link to="/project-details.html" class="title title_25">{{ item.title }}</router-link>
                             <p class="text text 22">{{ item.tags }}</p>
                         </div>
                         <router-link to="/project-details.html">
