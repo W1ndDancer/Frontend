@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "firstName": "Valerii",
+    "lastName": "Bryksin",
+    "city": "Ostrava",
+    "age": 99
+  },
+  {
+    "id": 2,
+    "firstName": "Valerii",
+    "lastName": "Bryksin",
+    "city": "Ostra",
+    "age": 66
+  },
+  {
+    "id": 3,
+    "firstName": "Ivan",
+    "lastName": "Petrov",
+    "city": "Prague",
+    "age": 33
+  }
+]
